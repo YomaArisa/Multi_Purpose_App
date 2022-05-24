@@ -14,6 +14,7 @@
     <string name="func_todo">To-Do</string>
     <string name="func_study">Lernkarten</string>
     <string name="func_start">Start</string>
+    <string name="func_new_note">Neue Notiz</string>
 
     // Navigation
     <string name="text_label_back">Back</string>
