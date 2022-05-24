@@ -7,11 +7,13 @@
     <string name="func_gamble">Münze/Würfel</string>
     <string name="func_dice">Würfel</string>
     <string name="func_coin">Münze</string>
+    <string name="func_coinflip">Münzwurf</string>
     <string name="func_notes">Notizen</string>
     <string name="func_random">Zufallszahl</string>
     <string name="func_stop">Stoppuhr</string>
     <string name="func_todo">To-Do</string>
     <string name="func_study">Lernkarten</string>
+    <string name="func_start">Start</string>
 
     // Navigation
     <string name="text_label_back">Back</string>
