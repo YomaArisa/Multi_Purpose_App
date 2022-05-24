@@ -12,6 +12,7 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/questrial"
         android:text="@string/app_name_abb"
         android:textColor="@color/Main_Header"
         android:textSize="55sp"
@@ -227,110 +228,9 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_margin="20dp"
-            android:contentDescription="@string/func_stop"
+            android:contentDescription="@string/func_study"
             android:src="@drawable/ic_study" />
     </LinearLayout>
-
-
-
-    <!--<Button
-        android:id="@+id/button_gamble"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:backgroundTint="@color/Bg_Card"
-        android:drawableBottom="@drawable/ic_gamble"
-        android:fontFamily="@font/questrial"
-        android:text="@string/func_gamble"
-        android:textColor="@color/Sub_Header"
-        android:onClick="openGamble"
-        app:layout_constraintBottom_toTopOf="@+id/guidelineRowOneTop"
-        app:layout_constraintEnd_toStartOf="@+id/guidelineColMidLeft"
-        app:layout_constraintStart_toEndOf="@+id/guidelineColStart"
-        app:layout_constraintTop_toBottomOf="@+id/guidelineHeader"
-        app:strokeColor="@color/white"
-        app:strokeWidth="@dimen/cardview_compat_inset_shadow" />-->
-
-    <!-- <Button
-         android:id="@+id/button_notes"
-         android:layout_width="0dp"
-         android:layout_height="0dp"
-         android:backgroundTint="@color/Bg_Card"
-         android:drawableBottom="@drawable/ic_notes"
-         android:fontFamily="@font/questrial"
-         android:text="@string/func_notes"
-         android:textColor="@color/Sub_Header"
-         android:onClick="openNotes"
-         app:layout_constraintBottom_toTopOf="@+id/guidelineRowOneTop"
-         app:layout_constraintEnd_toStartOf="@+id/guidelineColEnd"
-         app:layout_constraintStart_toEndOf="@+id/guidelineColMidRight"
-         app:layout_constraintTop_toBottomOf="@+id/guidelineHeader"
-         app:strokeColor="@color/white"
-         app:strokeWidth="@dimen/cardview_compat_inset_shadow"
-         tools:ignore="UsingOnClickInXml" />-->
-
-    <!--<Button
-        android:id="@+id/button_random"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:backgroundTint="@color/Bg_Card"
-        android:drawableBottom="@drawable/ic_random"
-        android:fontFamily="@font/questrial"
-        android:text="@string/func_random"
-        android:textColor="@color/Sub_Header"
-        app:layout_constraintBottom_toTopOf="@+id/guidelineRowTwoTop"
-        app:layout_constraintEnd_toStartOf="@+id/guidelineColMidLeft"
-        app:layout_constraintStart_toEndOf="@+id/guidelineColStart"
-        app:layout_constraintTop_toBottomOf="@+id/guidelineRowOneBot"
-        app:strokeColor="@color/white"
-        app:strokeWidth="@dimen/cardview_compat_inset_shadow" />-->
-
-    <!--<Button
-        android:id="@+id/button_stop"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:backgroundTint="@color/Bg_Card"
-        android:drawableBottom="@drawable/ic_stop"
-        android:fontFamily="@font/questrial"
-        android:text="@string/func_stop"
-        android:textColor="@color/Sub_Header"
-        app:layout_constraintBottom_toTopOf="@+id/guidelineRowTwoTop"
-        app:layout_constraintEnd_toStartOf="@+id/guidelineColEnd"
-        app:layout_constraintStart_toEndOf="@+id/guidelineColMidRight"
-        app:layout_constraintTop_toBottomOf="@+id/guidelineRowOneBot"
-        app:strokeColor="@color/white"
-        app:strokeWidth="@dimen/cardview_compat_inset_shadow" />-->
-
-   <!-- <Button
-        android:id="@+id/button_todo"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:backgroundTint="@color/Bg_Card"
-        android:drawableBottom="@drawable/ic_todo"
-        android:fontFamily="@font/questrial"
-        android:text="@string/func_todo"
-        android:textColor="@color/Sub_Header"
-        app:layout_constraintBottom_toTopOf="@+id/guidelineRowThreeTop"
-        app:layout_constraintEnd_toStartOf="@+id/guidelineColMidLeft"
-        app:layout_constraintStart_toEndOf="@+id/guidelineColStart"
-        app:layout_constraintTop_toBottomOf="@+id/guidelineRowTwoBot"
-        app:strokeColor="@color/white"
-        app:strokeWidth="@dimen/cardview_compat_inset_shadow" />-->
-
-    <!--<Button
-        android:id="@+id/button_study"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:backgroundTint="@color/Bg_Card"
-        android:drawableBottom="@drawable/ic_study"
-        android:fontFamily="@font/questrial"
-        android:text="@string/func_study"
-        android:textColor="@color/Sub_Header"
-        app:layout_constraintBottom_toTopOf="@+id/guidelineRowThreeTop"
-        app:layout_constraintEnd_toStartOf="@+id/guidelineColEnd"
-        app:layout_constraintStart_toEndOf="@+id/guidelineColMidRight"
-        app:layout_constraintTop_toBottomOf="@+id/guidelineRowTwoBot"
-        app:strokeColor="@color/white"
-        app:strokeWidth="@dimen/cardview_compat_inset_shadow" />-->
 
     <!-- Navigation Bar -->
     <com.google.android.material.bottomnavigation.BottomNavigationView
