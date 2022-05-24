@@ -51,6 +51,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(intentGamble);
                 this.finish();
                 break;
+            case R.id.btnNotes:
+                Intent intentNotes = new Intent(this, Notes.class);
+                startActivity(intentNotes);
+                this.finish();
+                break;
             default:
                 break;
         }
