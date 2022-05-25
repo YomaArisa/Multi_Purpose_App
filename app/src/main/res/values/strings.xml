@@ -29,6 +29,13 @@
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
 
+    // Zufallszahl
+    <string name="random_start">Von:</string>
+    <string name="random_startVal">1</string>
+    <string name="random_end">Bis:</string>
+    <string name="random_endVal">10</string>
+    <string name="random_result">Ergebnis:</string>
+
     <string name="menu_transform">Transform</string>
     <string name="menu_reflow">Reflow</string>
     <string name="menu_slideshow">Slideshow</string>
