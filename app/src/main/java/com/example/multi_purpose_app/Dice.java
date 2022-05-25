@@ -46,31 +46,31 @@ public class Dice extends AppCompatActivity implements View.OnClickListener {
         switch (pip) {
             // Zeige 1
             case 1:
-                changeDice.setImageResource(R.drawable.ic_gamble);
+                changeDice.setImageResource(R.drawable.ic_dice_one);
                 break;
             // Zeige 2
             case 2:
-                changeDice.setImageResource(R.drawable.ic_gamble);
+                changeDice.setImageResource(R.drawable.ic_dice_two);
                 break;
             // Zeige 3
             case 3:
-                changeDice.setImageResource(R.drawable.ic_gamble);
+                changeDice.setImageResource(R.drawable.ic_dice_three);
                 break;
             // Zeige 4
             case 4:
-                changeDice.setImageResource(R.drawable.ic_gamble);
+                changeDice.setImageResource(R.drawable.ic_dice_four);
                 break;
             // Zeige 5
             case 5:
-                changeDice.setImageResource(R.drawable.ic_gamble);
+                changeDice.setImageResource(R.drawable.ic_dice_five);
                 break;
             // Zeige 6
             case 6:
-                changeDice.setImageResource(R.drawable.ic_gamble);
+                changeDice.setImageResource(R.drawable.ic_dice_six);
                 break;
             // Zeige Fehler
             default:
-                changeDice.setImageResource(R.drawable.ic_gamble);
+                changeDice.setImageResource(R.drawable.ic_dice);
                 break;
         }
     }

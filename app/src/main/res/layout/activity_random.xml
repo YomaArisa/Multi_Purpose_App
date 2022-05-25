@@ -87,17 +87,17 @@
 
         <EditText
             android:id="@+id/randomEndValue"
-            android:minHeight="48dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="number"
-            android:padding="5dp"
             android:fontFamily="@font/questrial"
-            android:textSize="20sp"
+            android:hint="@string/random_endVal"
+            android:inputType="number"
+            android:minHeight="48dp"
+            android:padding="5dp"
             android:textColor="@color/white"
             android:textColorHint="@color/gray"
-            android:hint="@string/random_endVal"/>
+            android:textSize="20sp" />
 
     </LinearLayout>
 

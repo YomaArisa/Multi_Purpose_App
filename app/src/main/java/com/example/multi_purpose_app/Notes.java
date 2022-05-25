@@ -70,7 +70,7 @@ public class Notes extends AppCompatActivity implements View.OnClickListener {
         final ImageView deleteNote = new ImageView(getApplicationContext());
         LinearLayout.LayoutParams paramsDeleteNote = new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.WRAP_CONTENT);
         paramsDeleteNote.weight = 0.15f;
-        deleteNote.setBackground(ResourcesCompat.getDrawable(getResources(), R.drawable.ic_back, null));
+        deleteNote.setBackground(ResourcesCompat.getDrawable(getResources(), R.drawable.ic_delete, null));
 
         // Notizfeld zu Notiz-Container hinzufügen
         note.addView(noteText);
