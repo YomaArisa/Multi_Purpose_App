@@ -2,9 +2,12 @@ package com.example.multi_purpose_app;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.res.ResourcesCompat;
+import androidx.core.graphics.drawable.DrawableCompat;
 
+import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.graphics.Typeface;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
@@ -50,7 +53,7 @@ public class Notes extends AppCompatActivity implements View.OnClickListener {
 
         // Parameter für Notiz-Container setzen
         final LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-        params.setMargins(10,10,10,10);
+        params.setMargins(70,70,70,70);
         note.setLayoutParams(params);
         note.setOrientation(LinearLayout.HORIZONTAL);
         note.setPadding(15,5,15,5);
@@ -65,6 +68,7 @@ public class Notes extends AppCompatActivity implements View.OnClickListener {
         noteText.setHintTextColor(Color.GRAY);
         noteText.setTextColor(Color.WHITE);
         noteText.setTypeface(ResourcesCompat.getFont(this, R.font.questrial), Typeface.NORMAL);
+        noteText.setBackgroundColor(getResources().getColor(android.R.color.transparent));
 
         // Bild für Löschbutton
         final ImageView deleteNote = new ImageView(getApplicationContext());
