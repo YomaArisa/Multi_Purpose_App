@@ -46,15 +46,15 @@ public class Coin extends AppCompatActivity implements View.OnClickListener {
 
         // Zeige Kopf
         if (side == 1) {
-            changeCoin.setImageResource(R.drawable.ic_gamble);
+            changeCoin.setImageResource(R.drawable.ic_coin_heads);
         }
         // Zeige Zahl
         else if (side == 2) {
-            changeCoin.setImageResource(R.drawable.ic_dice);
+            changeCoin.setImageResource(R.drawable.ic_coin_tails);
         }
         // Zeige Fehler
         else {
-            changeCoin.setImageResource(R.drawable.ic_back);
+            changeCoin.setImageResource(R.drawable.ic_muenze);
         }
     }
 }
