@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.LinearLayout;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     // Buttons
@@ -16,6 +18,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     LinearLayout btnStopwatch;
     LinearLayout btnTodo;
     LinearLayout btnStudycards;
+
+    // Navigation Bar
+    BottomNavigationView botNavView;
 
 
     @Override
@@ -41,6 +46,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         btnStudycards = (LinearLayout) findViewById(R.id.btnStudycard);
         btnStudycards.setOnClickListener(this);
+
+        // Bottom Navigation nach ID
+        botNavView = findViewById(R.id.bottom_navigation);
+
     }
 
     @Override
