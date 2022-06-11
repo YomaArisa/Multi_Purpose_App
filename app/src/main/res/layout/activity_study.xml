@@ -53,7 +53,7 @@
 
     <!-- Button Antowort der Karte -->
     <!-- Nach Klick auf "Antwort" Text "Nächste Karte" -->
-    <!-- Nach Klick auf "Nächste Karte" erneuter Aufruf mit zufälliger Karte -->
+    <!-- Nach Klick auf "Nächste Karte" erneuter Aufruf mit von neuer zufälligen Karte -->
     <Button
         android:id="@+id/btnNewNote"
         android:layout_width="0dp"
