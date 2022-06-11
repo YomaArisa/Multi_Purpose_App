@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/Bg_Main"
-    tools:context=".StudycardCollectionView">
+    tools:context=".StudycardMenuCollection">
 
     <!-- Header -->
     <TextView
@@ -22,7 +22,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <!-- Name ausgewählter Collection -->
-    <EditText
+    <TextView
         android:id="@+id/stopTime"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -35,41 +35,38 @@
         android:textSize="20sp"
         android:orientation="horizontal"
         app:layout_constraintTop_toBottomOf="@id/guidelineHeader"
-        app:layout_constraintStart_toStartOf="@id/guidelineColStart"
-        app:layout_constraintEnd_toEndOf="@id/guidelineColEnd"/>
+        app:layout_constraintStart_toStartOf="@id/guidelineColOne"
+        app:layout_constraintEnd_toEndOf="@id/guidelineColFour"/>
 
-    <!-- Container für Karten in Collection -->
-    <ScrollView
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:contentDescription="@string/func_study"
-        app:layout_constraintBottom_toTopOf="@id/guidelineContentEnd"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/guidelineHeader">
-
-        <LinearLayout
-            android:id="@+id/containerNotes"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintEnd_toStartOf="@id/guidelineColEnd"
-            app:layout_constraintStart_toEndOf="@id/guidelineColStart"/>
-    </ScrollView>
-
-    <!-- Button für neue Karte (Frage & Antwort) -->
+    <!-- Bearbeiten-Button -->
     <Button
-        android:id="@+id/btnNewNote"
+        android:id="@+id/btnRound"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:text="@string/study_edit_collection"
         android:fontFamily="@font/questrial"
-        android:text="@string/study_new_card"
         android:textColor="@color/Sub_Header"
         app:backgroundTint="@color/Bg_Card"
         app:cornerRadius="10dp"
-        app:layout_constraintBottom_toTopOf="@+id/guidelineNew"
-        app:layout_constraintStart_toStartOf="@id/guidelineColNewLeft"
-        app:layout_constraintEnd_toEndOf="@id/guidelineColNewRight"
+        app:layout_constraintEnd_toStartOf="@id/guidelineColTwo"
+        app:layout_constraintStart_toStartOf="@id/guidelineColEdit"
+        app:layout_constraintBottom_toTopOf="@+id/guidelineButtonEnd"
+        app:strokeColor="@color/white"
+        app:strokeWidth="1dp" />
+
+    <!-- Lern-Button -->
+    <Button
+        android:id="@+id/btnStart"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/study_learn_collection"
+        android:fontFamily="@font/questrial"
+        android:textColor="@color/Sub_Header"
+        app:backgroundTint="@color/Bg_Card"
+        app:cornerRadius="10dp"
+        app:layout_constraintEnd_toStartOf="@id/guidelineColLearn"
+        app:layout_constraintStart_toStartOf="@id/guidelineColThree"
+        app:layout_constraintBottom_toTopOf="@+id/guidelineButtonEnd"
         app:strokeColor="@color/white"
         app:strokeWidth="1dp" />
 
@@ -98,52 +95,52 @@
         app:layout_constraintGuide_percent="0.25" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guidelineContentStart"
+        android:id="@+id/guidelineButtonEnd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.35" />
+        app:layout_constraintGuide_percent="0.45" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guidelineContentEnd"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
+        android:id="@+id/guidelineColEdit"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.10" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineColOne"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.20" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineColTwo"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.45" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineColThree"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.55" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineColFour"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
         app:layout_constraintGuide_percent="0.80" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guidelineNew"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
+        android:id="@+id/guidelineColLearn"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
         app:layout_constraintGuide_percent="0.90" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guidelineColStart"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.1" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guidelineColNewLeft"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.25" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guidelineColNewRight"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.75" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guidelineColEnd"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.9" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

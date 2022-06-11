@@ -14,7 +14,6 @@
     <string name="func_todo">To-Do</string>
     <string name="func_study">Lernkarten</string>
     <string name="func_start">Start</string>
-    <string name="func_new_note">Neue Notiz</string>
 
     <!-- Navigation -->
     <string name="text_label_back">Back</string>
@@ -29,6 +28,9 @@
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
 
+    <!-- Notizen -->
+    <string name="func_new_note">Neue Notiz</string>
+
     <!-- Zufallszahl -->
     <string name="random_start">Von:</string>
     <string name="random_startVal">1</string>
@@ -39,6 +41,13 @@
     <!-- Stoppuhr -->
     <string name="stop_time">00:00.00</string>
     <string name="stop_round">Runde</string>
+
+    <!-- Lernkarten -->
+    <string name="study_new_collection">Neue Sammlung</string>
+    <string name="study_edit_collection">Bearbeiten</string>
+    <string name="study_learn_collection">Lernen</string>
+    <string name="study_new_card">Neue Karte</string>
+    <string name="study_answer">Antwort</string>
 
 
     <string name="menu_transform">Transform</string>

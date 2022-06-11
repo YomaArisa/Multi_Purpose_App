@@ -17,7 +17,7 @@
             android:name=".StudycardCollectionView"
             android:exported="false" />
         <activity
-            android:name=".StudycardCreateCollection"
+            android:name=".StudycardMenuCollection"
             android:exported="false" />
         <activity
             android:name=".StudycardCollection"

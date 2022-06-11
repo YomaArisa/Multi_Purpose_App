@@ -4,11 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class StudycardCreateCollection extends AppCompatActivity {
+public class StudycardMenuCollection extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_studycard_create_collection);
+        setContentView(R.layout.activity_studycard_menu_collection);
     }
 }
