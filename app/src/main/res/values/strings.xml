@@ -42,13 +42,16 @@
     <string name="stop_time">00:00.00</string>
     <string name="stop_round">Runde</string>
 
+    <!-- To-Do -->
+    <string name="todo_new_list">Neue Liste</string>
+    <string name="todo_add_list">Liste anlegen</string>
+
     <!-- Lernkarten -->
     <string name="study_new_collection">Neue Sammlung</string>
     <string name="study_edit_collection">Bearbeiten</string>
     <string name="study_learn_collection">Lernen</string>
     <string name="study_new_card">Neue Karte</string>
     <string name="study_answer">Antwort</string>
-
 
     <string name="menu_transform">Transform</string>
     <string name="menu_reflow">Reflow</string>
