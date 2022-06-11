@@ -1,9 +1,9 @@
 <resources>
-    // Appname
+    <!-- Appname -->
     <string name="app_name">Multi Purpose App</string>
     <string name="app_name_abb">MPA</string>
 
-    // Funktionen
+    <!-- Funktionen -->
     <string name="func_gamble">Münze/Würfel</string>
     <string name="func_dice">Würfel</string>
     <string name="func_coin">Münze</string>
@@ -16,7 +16,7 @@
     <string name="func_start">Start</string>
     <string name="func_new_note">Neue Notiz</string>
 
-    // Navigation
+    <!-- Navigation -->
     <string name="text_label_back">Back</string>
     <string name="text_label_home">Home</string>
     <string name="text_label_navigation">Navigation</string>
@@ -29,12 +29,17 @@
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
 
-    // Zufallszahl
+    <!-- Zufallszahl -->
     <string name="random_start">Von:</string>
     <string name="random_startVal">1</string>
     <string name="random_end">Bis:</string>
     <string name="random_endVal">10</string>
     <string name="random_result">Ergebnis:</string>
+
+    <!-- Stoppuhr -->
+    <string name="stop_time">00:00.00</string>
+    <string name="stop_round">Runde</string>
+
 
     <string name="menu_transform">Transform</string>
     <string name="menu_reflow">Reflow</string>
