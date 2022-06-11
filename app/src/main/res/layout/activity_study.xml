@@ -23,7 +23,7 @@
 
     <!-- Name ausgewählter Collection -->
     <TextView
-        android:id="@+id/stopTime"
+        android:id="@+id/collectionName"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:padding="5dp"
@@ -41,7 +41,7 @@
     <!-- LinearLayout für Frage einer zufälligen Karte der Collection -->
     <!-- LinearLayout nach Klick auf "Antwort" Lösung der Karte -->
         <LinearLayout
-            android:id="@+id/containerNotes"
+            android:id="@+id/containerCard"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:contentDescription="@string/func_study"
@@ -53,9 +53,9 @@
 
     <!-- Button Antowort der Karte -->
     <!-- Nach Klick auf "Antwort" Text "Nächste Karte" -->
-    <!-- Nach Klick auf "Nächste Karte" erneuter Aufruf mit von neuer zufälligen Karte -->
+    <!-- Nach Klick auf "Nächste Karte" erneuter Aufruf von neuer zufälligen Karte -->
     <Button
-        android:id="@+id/btnNewNote"
+        android:id="@+id/btnAnswer"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:fontFamily="@font/questrial"

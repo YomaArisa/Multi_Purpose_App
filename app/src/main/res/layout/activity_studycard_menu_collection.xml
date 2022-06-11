@@ -23,7 +23,7 @@
 
     <!-- Name ausgewählter Collection -->
     <TextView
-        android:id="@+id/stopTime"
+        android:id="@+id/collectionName"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:padding="5dp"
@@ -40,7 +40,7 @@
 
     <!-- Bearbeiten-Button -->
     <Button
-        android:id="@+id/btnRound"
+        android:id="@+id/btnEdit"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="@string/study_edit_collection"
@@ -56,7 +56,7 @@
 
     <!-- Lern-Button -->
     <Button
-        android:id="@+id/btnStart"
+        android:id="@+id/btnLearn"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="@string/study_learn_collection"

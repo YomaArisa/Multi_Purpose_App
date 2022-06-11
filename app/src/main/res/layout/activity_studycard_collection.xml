@@ -21,6 +21,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <!-- Container für alle Collections -->
     <ScrollView
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -41,7 +42,7 @@
 
     <!-- Button für Anlegen neuer Lernkarten-Sammlung -->
     <Button
-        android:id="@+id/btnNewNote"
+        android:id="@+id/btnNewCollection"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:fontFamily="@font/questrial"
