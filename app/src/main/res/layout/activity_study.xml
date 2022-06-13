@@ -40,16 +40,16 @@
 
     <!-- LinearLayout für Frage einer zufälligen Karte der Collection -->
     <!-- LinearLayout nach Klick auf "Antwort" Lösung der Karte -->
-        <LinearLayout
-            android:id="@+id/containerCard"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:contentDescription="@string/func_study"
-            android:orientation="vertical"
-            app:layout_constraintBottom_toTopOf="@id/guidelineContentEnd"
-            app:layout_constraintEnd_toStartOf="@id/guidelineColEnd"
-            app:layout_constraintStart_toEndOf="@id/guidelineColStart"
-            app:layout_constraintTop_toBottomOf="@+id/guidelineHeader"/>
+    <LinearLayout
+        android:id="@+id/containerCard"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/func_study"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@id/guidelineContentEnd"
+        app:layout_constraintEnd_toStartOf="@id/guidelineColEnd"
+        app:layout_constraintStart_toEndOf="@id/guidelineColStart"
+        app:layout_constraintTop_toBottomOf="@+id/guidelineHeader"/>
 
     <!-- Button Antowort der Karte -->
     <!-- Nach Klick auf "Antwort" Text "Nächste Karte" -->
