@@ -4,7 +4,8 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/Julia/AndroidStudioProjects/MultiPurposeApp/app/src/main/res/drawable/ic_forward.xml" value="0.1" />
-        <entry key="..\:/Users/Julia/AndroidStudioProjects/MultiPurposeApp/app/src/main/res/layout/activity_notes.xml" value="0.18802083333333333" />
+        <entry key="..\:/Users/Julia/AndroidStudioProjects/MultiPurposeApp/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Users/Julia/AndroidStudioProjects/MultiPurposeApp/app/src/main/res/layout/activity_notes.xml" value="0.22" />
         <entry key="..\:/Users/Julia/AndroidStudioProjects/MultiPurposeApp/app/src/main/res/layout/activity_random.xml" value="0.18802083333333333" />
         <entry key="..\:/Users/Julia/AndroidStudioProjects/MultiPurposeApp/app/src/main/res/layout/activity_study.xml" value="0.18802083333333333" />
         <entry key="..\:/Users/Julia/AndroidStudioProjects/MultiPurposeApp/app/src/main/res/layout/activity_studycard_collection.xml" value="0.18802083333333333" />
