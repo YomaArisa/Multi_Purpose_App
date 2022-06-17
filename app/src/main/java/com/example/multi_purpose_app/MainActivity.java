@@ -70,6 +70,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(intentRandom);
                 this.finish();
                 break;
+            case R.id.btnTodo:
+                Intent intentTodo = new Intent(this, ToDoStart.class);
+                startActivity(intentTodo);
+                this.finish();
+                break;
             default:
                 break;
         }

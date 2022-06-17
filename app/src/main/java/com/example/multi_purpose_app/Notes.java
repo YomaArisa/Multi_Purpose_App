@@ -1,20 +1,36 @@
 package com.example.multi_purpose_app;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.res.ResourcesCompat;
-import androidx.core.graphics.drawable.DrawableCompat;
-
-import android.content.res.ColorStateList;
+import android.annotation.SuppressLint;
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.Typeface;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.view.KeyEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.res.ResourcesCompat;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
 
 public class Notes extends AppCompatActivity implements View.OnClickListener {
 
@@ -23,6 +39,12 @@ public class Notes extends AppCompatActivity implements View.OnClickListener {
 
     // Container für Notizen
     LinearLayout notes;
+
+    // Storage
+    Storage storage = new Storage();
+
+    // Zähler für Notiz-ID
+    int noteId = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,17 +59,57 @@ public class Notes extends AppCompatActivity implements View.OnClickListener {
         // Notiz-Container nach ID festlegen
         notes = (LinearLayout) findViewById(R.id.containerNotes);
 
-        // virtueller Klick auf neue Notiz, um erste Notiz für Layout zu erstellen
-        btnNewNote.callOnClick();
+        // Prüfung, ob bereits Notizen vorhanden sind
+        checkNotes();
     }
+
+    private void checkNotes() {
+
+        boolean isFilePresent = storage.isFilePresent(Notes.this, "notes.json");
+        if(isFilePresent) {
+            try {
+                // JSON-Datei auslesen
+                JSONObject jsonObjectIn = storage.read(this, "notes.json");
+                JSONArray jsonArray = jsonObjectIn.getJSONArray("Notes");
+
+                if (jsonArray != null) {
+                    // jsonArray durchlaufen und Inhalt anzeigen
+                    for (int i=0; i < jsonArray.length(); i++) {
+                        JSONObject jsonObject = jsonArray.getJSONObject(i);
+                        String text = jsonObject.getString("Text");
+                        createNewNote(text);
+                    }
+                }
+
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+        } else {
+            boolean isFileCreated = false;
+            try {
+                isFileCreated = storage.create(Notes.this, "notes.json", "Notes");
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            if(isFileCreated) {
+                // virtueller Klick auf neue Notiz, um erste Notiz für Layout zu erstellen
+                btnNewNote.callOnClick();
+            } else {
+                createNewNote("Fehler beim Erstellen der Sicherungsdatei");
+            }
+        }
+    }
+
 
     @Override
     public void onClick(View v) {
-        createNewNote();
-        saveNewNote();
+        createNewNote("");
     }
 
-    private void createNewNote() {
+    @SuppressLint("SetTextI18n")
+    private void createNewNote(String text) {
+        noteId++;
+
         // Neuen Container in View anlegen
         LinearLayout note = new LinearLayout(getApplicationContext());
 
@@ -58,6 +120,7 @@ public class Notes extends AppCompatActivity implements View.OnClickListener {
         note.setOrientation(LinearLayout.HORIZONTAL);
         note.setPadding(15,5,15,5);
         note.setBackground(ResourcesCompat.getDrawable(getResources(), R.drawable.border, null));
+        note.setId(noteId);
 
         // Editierbares Notizfeld anlegen
         EditText noteText = new EditText(getApplicationContext());
@@ -70,14 +133,27 @@ public class Notes extends AppCompatActivity implements View.OnClickListener {
         noteText.setTypeface(ResourcesCompat.getFont(this, R.font.questrial), Typeface.NORMAL);
         noteText.setBackgroundColor(getResources().getColor(android.R.color.transparent));
 
+        LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+        layoutParams.setMargins(35,0,35,0);
+
+        // Bild für Notiz speichern
+        final ImageView saveNote = new ImageView(getApplicationContext());
+        saveNote.setLayoutParams(layoutParams);
+        saveNote.setBackground(ResourcesCompat.getDrawable(getResources(), R.drawable.ic_save, null));
+
         // Bild für Löschbutton
         final ImageView deleteNote = new ImageView(getApplicationContext());
-        LinearLayout.LayoutParams paramsDeleteNote = new LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.WRAP_CONTENT);
-        paramsDeleteNote.weight = 0.15f;
+        deleteNote.setLayoutParams(layoutParams);
         deleteNote.setBackground(ResourcesCompat.getDrawable(getResources(), R.drawable.ic_delete, null));
+
+        // Falls Notiz aus Speicher Text übernehmen
+        if (text != null) {
+            noteText.setText(text);
+        }
 
         // Notizfeld zu Notiz-Container hinzufügen
         note.addView(noteText);
+        note.addView(saveNote);
         note.addView(deleteNote);
 
         // Notiz-Container zu Notizen hinzufügen
@@ -90,10 +166,45 @@ public class Notes extends AppCompatActivity implements View.OnClickListener {
             if(parent.getParent() != null) {
                 ((ViewGroup) parent.getParent()).removeView(parent);
             }
-        });
-    }
+            String noteString = noteText.getText().toString();
+            int id = note.getId();
 
-    private void saveNewNote() {
-        // Notiz speichern
+            // JSON-Objekt der Notiz erstellen
+            JSONObject jsonObject = new JSONObject();
+            //jsonObject.put("ID", id);
+            //jsonObject.put("Text", noteString);
+
+            // Notiztext in JSON-Datei schreiben
+            boolean isNoteDeleted = false;
+            try {
+                isNoteDeleted = storage.delete(Notes.this, "notes.json", "Notes", id);
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+            if(!isNoteDeleted) {
+                Toast.makeText(this, "Fehler beim Löschen", Toast.LENGTH_LONG).show();
+            }
+        });
+
+        // OnClickListener zum Speichern
+        saveNote.setOnClickListener(v -> {
+            String noteString = noteText.getText().toString();
+            int id = note.getId();
+
+            // JSON-Objekt der Notiz erstellen
+            JSONObject jsonObject = new JSONObject();
+            try {
+                jsonObject.put("ID", id);
+                jsonObject.put("Text", noteString);
+
+                // Notiztext in JSON-Datei schreiben
+                boolean isNoteSaved = storage.write(Notes.this, "notes.json", jsonObject, "Notes");
+                if(!isNoteSaved) {
+                    Toast.makeText(this, "Fehler beim Speichern", Toast.LENGTH_LONG).show();
+                }
+            } catch (JSONException | IOException e) {
+                e.printStackTrace();
+            }
+        });
     }
 }
