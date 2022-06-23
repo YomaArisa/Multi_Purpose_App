@@ -26,6 +26,9 @@
             android:name=".ToDoStart"
             android:exported="false" />
         <activity
+            android:name=".ToDo"
+            android:exported="false" />
+        <activity
             android:name=".Study"
             android:exported="false" />
         <activity

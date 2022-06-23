@@ -46,7 +46,7 @@
         app:layout_constraintBottom_toTopOf="@id/guidelineContentEnd"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/guidelineHeader">
+        app:layout_constraintTop_toBottomOf="@+id/guidelineContainer">
 
         <LinearLayout
             android:id="@+id/containerTodo"
@@ -57,9 +57,9 @@
             app:layout_constraintStart_toEndOf="@id/guidelineColStart"/>
     </ScrollView>
 
-    <!-- Button für Anlegen der Liste -->
+    <!-- Button für Speichern der Liste -->
     <Button
-        android:id="@+id/btnNewNote"
+        android:id="@+id/btnSaveList"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:fontFamily="@font/questrial"
@@ -70,6 +70,22 @@
         app:layout_constraintBottom_toTopOf="@+id/guidelineNew"
         app:layout_constraintStart_toStartOf="@id/guidelineColNewLeft"
         app:layout_constraintEnd_toEndOf="@id/guidelineColNewRight"
+        app:strokeColor="@color/white"
+        app:strokeWidth="1dp" />
+
+    <!-- Button zum Anlegen neuer Items -->
+    <Button
+        android:id="@+id/btnNewItem"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/Bg_Card"
+        android:fontFamily="@font/questrial"
+        android:foreground="@android:drawable/ic_input_add"
+        android:foregroundTint="@color/Sub_Header"
+        app:cornerRadius="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/guidelineNew"
+        app:layout_constraintEnd_toEndOf="@id/guidelineColEnd"
+        app:layout_constraintStart_toStartOf="@id/guidelineColNewRight"
         app:strokeColor="@color/white"
         app:strokeWidth="1dp" />
 
@@ -96,6 +112,13 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.25" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineContainer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.35" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guidelineContentEnd"
