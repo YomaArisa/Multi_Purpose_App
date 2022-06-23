@@ -44,7 +44,7 @@
 
     <!-- To-Do -->
     <string name="todo_new_list">Neue Liste</string>
-    <string name="todo_add_list">Liste anlegen</string>
+    <string name="todo_add_list">Liste speichern</string>
 
     <!-- Lernkarten -->
     <string name="study_new_collection">Neue Sammlung</string>

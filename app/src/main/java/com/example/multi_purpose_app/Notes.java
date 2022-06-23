@@ -100,7 +100,6 @@ public class Notes extends AppCompatActivity implements View.OnClickListener {
         }
     }
 
-
     @Override
     public void onClick(View v) {
         createNewNote("");
@@ -198,7 +197,7 @@ public class Notes extends AppCompatActivity implements View.OnClickListener {
                 jsonObject.put("Text", noteString);
 
                 // Notiztext in JSON-Datei schreiben
-                boolean isNoteSaved = storage.write(Notes.this, "notes.json", jsonObject, "Notes");
+                boolean isNoteSaved = storage.write(Notes.this, "notes.json", jsonObject, "Notes", null);
                 if(!isNoteSaved) {
                     Toast.makeText(this, "Fehler beim Speichern", Toast.LENGTH_LONG).show();
                 }
