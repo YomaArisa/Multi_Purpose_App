@@ -15,6 +15,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 
 public class Storage {
     // Erstellen der JSON-Datei
@@ -47,6 +48,7 @@ public class Storage {
 
             switch (root) {
                 case "Notes":
+                    int id = 0;
                     // JSON-Objekte in Map speichern, um Duplikate zu überschreiben
                     HashMap<Integer, String> notes = new HashMap<>();
                     jsonArray = null;
@@ -58,6 +60,15 @@ public class Storage {
                         notes.put(note.getInt("ID"), note.getString("Text"));
                     }
 
+                    // ID festlegen
+                    if (text.getInt("ID") == 0) {
+                        if (jsonArray != null) {
+                            id = jsonArray.length();
+                        }
+                    } else {
+                        id = text.getInt("ID");
+                    }
+
                     // Altes JSON-Array clearen
                     if (jsonArray != null) {
                         while(jsonArray.length()>0)
@@ -67,7 +78,7 @@ public class Storage {
                     }
 
                     // Notiz in JSON-Struktur integrieren
-                    notes.put(text.getInt("ID"), text.getString("Text"));
+                    notes.put(id, text.getString("Text"));
                     for (Map.Entry<Integer, String> entry : notes.entrySet()) {
                             JSONObject note = new JSONObject();
                             note.put("ID", entry.getKey());
@@ -78,7 +89,7 @@ public class Storage {
                     }
                     break;
                 case "Lists":
-                    int id = 0;
+                    id = 0;
                     // JSON-Objekte in Map speichern, um Duplikate zu überschreiben
                     HashMap<Integer, String> lists = new HashMap<>();
                     jsonArray = null;
@@ -123,7 +134,6 @@ public class Storage {
                     id = 0;
                     // JSON-Objekte in Map speichern, um Duplikate zu überschreiben
                     HashMap<Integer, ArrayList<String>> items = new HashMap<>();
-                    ArrayList<String> itemVals = new ArrayList<>();
                     jsonArray = null;
                     if (jsonObject != null) {
                         JSONArray jsonRootArray = jsonObject.optJSONArray("Lists");
@@ -141,8 +151,8 @@ public class Storage {
                     for (int n = 0; n < (jsonArray != null ? jsonArray.length() : 0); n++) {
                         JSONObject item = jsonArray.getJSONObject(n);
                         items.put(item.getInt("ID"), new ArrayList<>());
-                        items.get(item.getInt("ID")).add(item.getString("Item"));
-                        items.get(item.getInt("ID")).add(item.getString("IsChecked"));
+                        Objects.requireNonNull(items.get(item.getInt("ID"))).add(item.getString("Item"));
+                        Objects.requireNonNull(items.get(item.getInt("ID"))).add(item.getString("IsChecked"));
                     }
 
                     // ID festlegen
@@ -164,8 +174,8 @@ public class Storage {
 
                     // Item in JSON-Struktur integrieren
                     items.put(id, new ArrayList<>());
-                    items.get(id).add(text.getString("Item"));
-                    items.get(id).add(text.getString("IsChecked"));
+                    Objects.requireNonNull(items.get(id)).add(text.getString("Item"));
+                    Objects.requireNonNull(items.get(id)).add(text.getString("IsChecked"));
                     for (Map.Entry<Integer, ArrayList<String>> entry : items.entrySet()) {
                         JSONObject item = new JSONObject();
                         item.put("ID", entry.getKey());

@@ -1,18 +1,14 @@
 package com.example.multi_purpose_app;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.content.DialogInterface;
+import android.annotation.SuppressLint;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.text.Editable;
-import android.text.InputFilter;
-import android.text.TextWatcher;
-import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class Random extends AppCompatActivity implements View.OnClickListener {
 
@@ -34,38 +30,32 @@ public class Random extends AppCompatActivity implements View.OnClickListener {
         setContentView(R.layout.activity_random);
 
         // Button nach ID festlegen
-        btnStart = (Button) findViewById(R.id.btnStart);
+        btnStart = findViewById(R.id.btnStart);
         // OnClickListener für Startbutton
         btnStart.setOnClickListener(this);
 
         // Von Eingabe nach ID festlegen
-        editStart = (EditText) findViewById(R.id.randomStartValue);
+        editStart = findViewById(R.id.randomStartValue);
 
         // Textfarbe nach Eingabe ändern
-        editStart.setOnFocusChangeListener(new View.OnFocusChangeListener() {
-            @Override
-            public void onFocusChange(View view, boolean hasFocus) {
-                if (hasFocus) {
-                    editStart.setTextColor(Color.WHITE);
-                }
+        editStart.setOnFocusChangeListener((view, hasFocus) -> {
+            if (hasFocus) {
+                editStart.setTextColor(Color.WHITE);
             }
         });
 
         // Bis Eingabe nach ID festlegen
-        editEnd = (EditText) findViewById(R.id.randomEndValue);
+        editEnd = findViewById(R.id.randomEndValue);
 
         // Textfarbe nach Eingabe ändern
-        editEnd.setOnFocusChangeListener(new View.OnFocusChangeListener() {
-            @Override
-            public void onFocusChange(View view, boolean hasFocus) {
-                if (hasFocus) {
-                    editEnd.setTextColor(Color.WHITE);
-                }
+        editEnd.setOnFocusChangeListener((view, hasFocus) -> {
+            if (hasFocus) {
+                editEnd.setTextColor(Color.WHITE);
             }
         });
 
         // Ergebnis nach ID festlegen
-        result = (TextView) findViewById(R.id.randomResultValue);
+        result = findViewById(R.id.randomResultValue);
     }
 
 
@@ -75,16 +65,21 @@ public class Random extends AppCompatActivity implements View.OnClickListener {
                 calcResult();
     }
 
+    @SuppressLint("SetTextI18n")
     private void calcResult() {
         int start = Integer.parseInt(editStart.getText().toString());
 
         int end = Integer.parseInt(editEnd.getText().toString());
 
-        // Zufallszahl von x bis y berechnen
-        int r = (int) (Math.random() * (end - start)) + start;
-        System.out.println(r);
+        if (start > end) {
+            result.setText("Start größer als Ende");
+        } else {
+            // Zufallszahl von x bis y berechnen
+            int r = (int) (Math.random() * (end - start)) + start;
+            System.out.println(r);
 
-        // Ergebnis ausgeben
-        result.setText(Integer.toString(r));
+            // Ergebnis ausgeben
+            result.setText(Integer.toString(r));
+        }
     }
 }

@@ -1,14 +1,9 @@
 package com.example.multi_purpose_app;
 
 import android.annotation.SuppressLint;
-import android.content.Context;
-import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
-import android.text.Editable;
-import android.text.TextWatcher;
-import android.view.KeyEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -24,12 +19,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.BufferedReader;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.InputStreamReader;
 
 
 public class Notes extends AppCompatActivity implements View.OnClickListener {
@@ -52,12 +42,12 @@ public class Notes extends AppCompatActivity implements View.OnClickListener {
         setContentView(R.layout.activity_notes);
 
         // Button nach ID festlegen
-        btnNewNote = (Button) findViewById(R.id.btnNewNote);
+        btnNewNote = findViewById(R.id.btnNewNote);
         // OnClickListener für Startbutton
         btnNewNote.setOnClickListener(this);
 
         // Notiz-Container nach ID festlegen
-        notes = (LinearLayout) findViewById(R.id.containerNotes);
+        notes = findViewById(R.id.containerNotes);
 
         // Prüfung, ob bereits Notizen vorhanden sind
         checkNotes();
@@ -72,13 +62,11 @@ public class Notes extends AppCompatActivity implements View.OnClickListener {
                 JSONObject jsonObjectIn = storage.read(this, "notes.json");
                 JSONArray jsonArray = jsonObjectIn.getJSONArray("Notes");
 
-                if (jsonArray != null) {
-                    // jsonArray durchlaufen und Inhalt anzeigen
-                    for (int i=0; i < jsonArray.length(); i++) {
-                        JSONObject jsonObject = jsonArray.getJSONObject(i);
-                        String text = jsonObject.getString("Text");
-                        createNewNote(text);
-                    }
+                // jsonArray durchlaufen und Inhalt anzeigen
+                for (int i=0; i < jsonArray.length(); i++) {
+                    JSONObject jsonObject = jsonArray.getJSONObject(i);
+                    String text = jsonObject.getString("Text");
+                    createNewNote(text, i);
                 }
 
             } catch (JSONException e) {
@@ -95,20 +83,18 @@ public class Notes extends AppCompatActivity implements View.OnClickListener {
                 // virtueller Klick auf neue Notiz, um erste Notiz für Layout zu erstellen
                 btnNewNote.callOnClick();
             } else {
-                createNewNote("Fehler beim Erstellen der Sicherungsdatei");
+                Toast.makeText(this, "Fehler beim Erstellen der Sicherungsdatei", Toast.LENGTH_LONG).show();
             }
         }
     }
 
     @Override
     public void onClick(View v) {
-        createNewNote("");
+        createNewNote("", noteId);
     }
 
     @SuppressLint("SetTextI18n")
-    private void createNewNote(String text) {
-        noteId++;
-
+    private void createNewNote(String text, int id) {
         // Neuen Container in View anlegen
         LinearLayout note = new LinearLayout(getApplicationContext());
 
@@ -165,13 +151,6 @@ public class Notes extends AppCompatActivity implements View.OnClickListener {
             if(parent.getParent() != null) {
                 ((ViewGroup) parent.getParent()).removeView(parent);
             }
-            String noteString = noteText.getText().toString();
-            int id = note.getId();
-
-            // JSON-Objekt der Notiz erstellen
-            JSONObject jsonObject = new JSONObject();
-            //jsonObject.put("ID", id);
-            //jsonObject.put("Text", noteString);
 
             // Notiztext in JSON-Datei schreiben
             boolean isNoteDeleted = false;
@@ -182,13 +161,17 @@ public class Notes extends AppCompatActivity implements View.OnClickListener {
             }
             if(!isNoteDeleted) {
                 Toast.makeText(this, "Fehler beim Löschen", Toast.LENGTH_LONG).show();
+
             }
+
+            // reload JSON
+            notes.removeAllViews();
+            checkNotes();
         });
 
         // OnClickListener zum Speichern
         saveNote.setOnClickListener(v -> {
             String noteString = noteText.getText().toString();
-            int id = note.getId();
 
             // JSON-Objekt der Notiz erstellen
             JSONObject jsonObject = new JSONObject();
@@ -204,6 +187,10 @@ public class Notes extends AppCompatActivity implements View.OnClickListener {
             } catch (JSONException | IOException e) {
                 e.printStackTrace();
             }
+
+            // reload JSON
+            notes.removeAllViews();
+            checkNotes();
         });
     }
 }
