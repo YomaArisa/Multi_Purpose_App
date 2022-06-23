@@ -3,6 +3,9 @@
     <string name="app_name">Multi Purpose App</string>
     <string name="app_name_abb">MPA</string>
 
+    <!-- Hauptmenü -->
+    <string name="menu">Menü</string>
+
     <!-- Funktionen -->
     <string name="func_gamble">Münze/Würfel</string>
     <string name="func_dice">Würfel</string>
