@@ -34,7 +34,7 @@ public class ToDoStart extends AppCompatActivity implements View.OnClickListener
     Storage storage = new Storage();
 
     // Zähler für List-ID
-    int listId = 0;
+    int listId = 2000000000;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -34,7 +34,7 @@ public class Notes extends AppCompatActivity implements View.OnClickListener {
     Storage storage = new Storage();
 
     // Zähler für Notiz-ID
-    int noteId = 0;
+    int noteId = 2000000000;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

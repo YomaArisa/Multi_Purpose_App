@@ -43,7 +43,7 @@ public class ToDo extends AppCompatActivity implements View.OnClickListener {
     Storage storage = new Storage();
 
     // Zähler für List-ID
-    int itemId = 0;
+    int itemId = 2000000000;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

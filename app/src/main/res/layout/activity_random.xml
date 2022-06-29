@@ -58,7 +58,7 @@
             android:text="@string/random_startVal"
             android:textSize="20sp"
             android:background="@null"
-            android:maxLength="8"
+            android:maxLength="9"
             android:importantForAutofill="no"
             tools:ignore="LabelFor" />
 
@@ -101,7 +101,7 @@
             android:textColor="@color/gray"
             android:textSize="20sp"
             android:background="@null"
-            android:maxLength="8"
+            android:maxLength="9"
             android:importantForAutofill="no"
             tools:ignore="LabelFor" />
 
