@@ -61,7 +61,7 @@ public class Storage {
                     }
 
                     // ID festlegen
-                    if (text.getInt("ID") == 0) {
+                    if (text.getInt("ID") == 2000000000) {
                         if (jsonArray != null) {
                             id = jsonArray.length();
                         }
@@ -102,7 +102,7 @@ public class Storage {
                     }
 
                     // ID festlegen
-                    if (text.getInt("ID") == 0) {
+                    if (text.getInt("ID") == 2000000000) {
                         if (jsonArray != null) {
                             id = jsonArray.length();
                         }
@@ -156,7 +156,7 @@ public class Storage {
                     }
 
                     // ID festlegen
-                    if (text.getInt("ID") == 0) {
+                    if (text.getInt("ID") == 2000000000) {
                         if (jsonArray != null) {
                             id = jsonArray.length();
                         }
