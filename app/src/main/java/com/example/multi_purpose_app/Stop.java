@@ -66,7 +66,7 @@ public class Stop extends AppCompatActivity implements View.OnClickListener {
         }
         if (!timerRunning) {
             timerRunning = true;
-            btnStart.setText("PAUSE");
+            btnStart.setText("STOP");
             missedTime = missedTime + (System.currentTimeMillis() - pauseTime);
 
             handler.post(new Runnable() {
@@ -89,7 +89,7 @@ public class Stop extends AppCompatActivity implements View.OnClickListener {
         else {
             timerRunning = false;
             pauseTime = System.currentTimeMillis();
-            btnStart.setText("RESUME");
+            btnStart.setText("WEITER");
         }
     }
 
