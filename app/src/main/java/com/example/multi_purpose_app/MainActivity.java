@@ -19,8 +19,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     LinearLayout btnTodo;
     LinearLayout btnStudycards;
 
-    // Navigation Bar
-    BottomNavigationView botNavView;
 
 
     @Override
@@ -46,10 +44,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         btnStudycards = (LinearLayout) findViewById(R.id.btnStudycard);
         btnStudycards.setOnClickListener(this);
-
-        // Bottom Navigation nach ID
-        botNavView = findViewById(R.id.bottom_navigation);
-
     }
 
     @Override
@@ -58,22 +52,22 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.btnGamble:
                 Intent intentGamble = new Intent(this, Gamble.class);
                 startActivity(intentGamble);
-                this.finish();
                 break;
             case R.id.btnNotes:
                 Intent intentNotes = new Intent(this, Notes.class);
                 startActivity(intentNotes);
-                this.finish();
                 break;
             case R.id.btnRandom:
                 Intent intentRandom = new Intent(this, Random.class);
                 startActivity(intentRandom);
-                this.finish();
                 break;
             case R.id.btnTodo:
                 Intent intentTodo = new Intent(this, ToDoStart.class);
                 startActivity(intentTodo);
-                this.finish();
+                break;
+            case R.id.btnStopwatch:
+                Intent intentStop = new Intent(this, Stop.class);
+                startActivity(intentStop);
                 break;
             default:
                 break;

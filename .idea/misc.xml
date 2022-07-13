@@ -3,6 +3,20 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Nylah/StudioProjects/Multi_Purpose_App/app/src/main/res/layout/activity_coin.xml" value="0.18819655521783182" />
+        <entry key="..\:/Users/Nylah/StudioProjects/Multi_Purpose_App/app/src/main/res/layout/activity_dice.xml" value="0.18819655521783182" />
+        <entry key="..\:/Users/Nylah/StudioProjects/Multi_Purpose_App/app/src/main/res/layout/activity_gamble.xml" value="0.18819655521783182" />
+        <entry key="..\:/Users/Nylah/StudioProjects/Multi_Purpose_App/app/src/main/res/layout/activity_main.xml" value="0.18819655521783182" />
+        <entry key="..\:/Users/Nylah/StudioProjects/Multi_Purpose_App/app/src/main/res/layout/activity_notes.xml" value="0.18819655521783182" />
+        <entry key="..\:/Users/Nylah/StudioProjects/Multi_Purpose_App/app/src/main/res/layout/activity_random.xml" value="0.18819655521783182" />
+        <entry key="..\:/Users/Nylah/StudioProjects/Multi_Purpose_App/app/src/main/res/layout/activity_stop.xml" value="0.2" />
+        <entry key="..\:/Users/Nylah/StudioProjects/Multi_Purpose_App/app/src/main/res/layout/activity_study.xml" value="0.18819655521783182" />
+        <entry key="..\:/Users/Nylah/StudioProjects/Multi_Purpose_App/app/src/main/res/layout/activity_studycard_collection.xml" value="0.18819655521783182" />
+        <entry key="..\:/Users/Nylah/StudioProjects/Multi_Purpose_App/app/src/main/res/layout/activity_studycard_collection_view.xml" value="0.18819655521783182" />
+        <entry key="..\:/Users/Nylah/StudioProjects/Multi_Purpose_App/app/src/main/res/layout/activity_studycard_menu_collection.xml" value="0.18819655521783182" />
+        <entry key="..\:/Users/Nylah/StudioProjects/Multi_Purpose_App/app/src/main/res/layout/activity_to_do.xml" value="0.18819655521783182" />
+        <entry key="..\:/Users/Nylah/StudioProjects/Multi_Purpose_App/app/src/main/res/layout/activity_to_do_start.xml" value="0.18819655521783182" />
+        <entry key="..\:/Users/Nylah/StudioProjects/Multi_Purpose_App/app/src/main/res/menu/my_navigation_items.xml" value="0.2015625" />
         <entry key="..\:/Users/Julia/AndroidStudioProjects/MultiPurposeApp/app/src/main/res/font/questrial.xml" value="0.21822916666666667" />
         <entry key="..\:/Users/Julia/AndroidStudioProjects/MultiPurposeApp/app/src/main/res/layout/activity_random.xml" value="0.13949275362318841" />
         <entry key="..\:/Users/Julia/AndroidStudioProjects/MultiPurposeApp/app/src/main/res/layout/activity_to_do.xml" value="0.13949275362318841" />
