@@ -31,12 +31,10 @@ public class Gamble extends AppCompatActivity implements View.OnClickListener {
         if (v.getId() == R.id.btnDice) {
             Intent intentDice = new Intent(this, Dice.class);
             startActivity(intentDice);
-            this.finish();
         }
         else if (v.getId() == R.id.btnCoin) {
             Intent intentCoin = new Intent(this, Coin.class);
             startActivity(intentCoin);
-            this.finish();
         }
     }
 }
