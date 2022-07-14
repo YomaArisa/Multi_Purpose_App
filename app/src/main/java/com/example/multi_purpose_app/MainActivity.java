@@ -61,13 +61,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Intent intentRandom = new Intent(this, Random.class);
                 startActivity(intentRandom);
                 break;
+            case R.id.btnStopwatch:
+                Intent intentStop = new Intent(this, Stop.class);
+                startActivity(intentStop);
+                break;
             case R.id.btnTodo:
                 Intent intentTodo = new Intent(this, ToDoStart.class);
                 startActivity(intentTodo);
                 break;
-            case R.id.btnStopwatch:
-                Intent intentStop = new Intent(this, Stop.class);
-                startActivity(intentStop);
+            case R.id.btnStudycard:
+                Intent intentStudycardCollection = new Intent(this, StudycardCollection.class);
+                startActivity(intentStudycardCollection);
                 break;
             default:
                 break;
